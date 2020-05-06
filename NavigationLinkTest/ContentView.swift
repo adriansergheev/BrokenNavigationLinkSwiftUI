@@ -9,13 +9,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
-    }
+	var body: some View {
+		TabView {
+			MainView(vm:
+				MainViewModel()
+			)
+				.tabItem {
+					Text("First")
+			}
+			SettingsView(vm:
+				SettingsViewModel()
+			)
+				.tabItem {
+					Text("Second")
+			}
+		}
+		.accentColor(.black)
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+	static var previews: some View {
+		ContentView()
+	}
 }
